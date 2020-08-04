@@ -1,0 +1,125 @@
+.Todo{
+  margin:0 auto;
+  margin-top: 90px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 350px;
+}
+.TodoList{
+
+  width: 350px;
+  color: #101935;
+}
+/* .TodoListItem{
+  font-size: 14px;
+  border: 1px solid white;
+} */
+.TodoListItem p{
+  font-size: 21px;
+}
+.TodoItems::first-letter{
+  text-transform: capitalize;
+}
+.DeleteButton{
+  float:left;
+  background: none;
+  border: 0;
+  font-size:20px;
+  color:#101935;
+
+}
+.DeleteButton:hover{
+  float:left;
+  background: none;
+  border: 0;
+  font-size:19px;
+  color:#d00000;
+  transition-delay: 0.1s;
+transition-duration: 0.5s
+}
+.EditButton{
+  float:left;
+  background: none;
+  border: 0;
+  font-size:19px;
+  color:#101935;
+}
+.EditButton:hover{
+  float:left;
+  background: none;
+  border: 0;
+  font-size:19px;
+  color:#f5b700;
+  transition-delay: 0.1s;
+transition-duration: 0.5s
+}
+button:focus{
+  outline:none;
+}
+.TodoButtons{
+  padding-left:0px;
+  background-color:rgb(0, 223, 29);
+  height: 40px;
+  padding-top: 7px;
+  padding-right: 0;
+
+}
+.TodoItems{
+  background-color:rgb(0, 223, 29);
+    height: 40px;
+    margin-bottom: 2px;
+    padding-top: 7px;
+    padding-right: 0;
+}
+  .TodoCrosline{
+    text-decoration: line-through;
+  }
+  .editTodo {
+    background-color: rgb(0, 223, 29);
+    font-size: 21px;
+    height: 25px;
+    color:#281B57;
+      border: 0;
+  }
+  .editTodo:focus{
+    outline: none;
+  }
+  .TodoToggleButton{
+    font-size: 21px;
+    padding-left: 10px;
+    background-color:rgb(0, 223, 29);
+    height: 40px;
+    padding-top:12px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .TodoToggleButton1{
+    font-size: 21px;
+    padding-left: 10px;
+    background-color:rgb(0, 223, 29);
+    height: 40px;
+    padding-top:12px;
+    padding-right: 0;
+    padding-left: 0;
+    color:#ffff;
+  }
+
+.ChangeMode{
+  float: right;
+  color: #101935 ;
+}
+.lightNameMode{
+  float: right;
+  color: #ffff;
+}
+.fa-lightbulb{
+  font-size: 25px;
+}
+.ligthDark{
+    font-size: 25px;
+    color:#ffff;
+}
+.lightLight{
+  font-size: 25px;
+  color: #101935 ;
+}

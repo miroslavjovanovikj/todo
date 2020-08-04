@@ -1,0 +1,54 @@
+.TodoForm{
+margin: 0;
+margin-bottom: 35px;
+
+}
+.TodoFormInput  input{
+  border: 0;
+  width: 300px;
+  height: 50px;
+  padding: 0 15px;
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  margin-left: 0;
+}
+.TodoFormInput input::placeholder{
+  color:rgba(150, 159, 204, 0.69);
+  text-transform: uppercase;
+}
+.TodoFormInput input:focus{
+  outline: none;
+}
+.TodoFormButton{
+height: 50px;
+width: 50px;
+background-color: #ffff;
+cursor: pointer;
+border: 0;
+font-weight: bold;
+color:#ffff;
+border: 0;
+position: absolute;
+margin-top: 15px;
+margin-right: 50px;
+}
+.plusIcon {
+  font-size: 40px;
+  color:#101935;
+}
+.plusIcon:hover{
+  color: rgb(15, 186, 0);
+  transition-delay: 0.1s;
+transition-duration: 0.5s
+}
+.iconEmpty {
+  font-size: 40px;
+  color:rgb(147, 147, 149);
+}
+.iconEmpty:hover{
+  color: rgb(223, 60, 17);
+  transition-delay: 0.1s;
+transition-duration: 0.5s
+}
