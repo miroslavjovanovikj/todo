@@ -23,30 +23,30 @@ export const todoReducer =  (state=initialState, action)=>{
             return {...state,...list,[item.todoItem]:list}
         })
 
-    case "DELETE":
-        list = list.filter(item=>{
-          return item.currId!==action.payload
-        })
-      return{...state, list}
+      case "DELETE":
+          list = list.filter(item=>{
+            return item.currId!==action.payload
+          })
+        return{...state, list}
 
-    case 'TOGGLE':
-      let isComplited =state.list.find(item=>(item.currId===action.payload))
-        if(!isComplited.complited){
-          isComplited.complited=true
-          return {...state,...list}
-        }
-          isComplited.complited=false
-          return {...state,...list}
+      case 'TOGGLE':
+        let isComplited =state.list.find(item=>(item.currId===action.payload))
+          if(!isComplited.complited){
+            isComplited.complited=true
+            return {...state,...list}
+          }
+            isComplited.complited=false
+            return {...state,...list}
 
-      case 'DARK_MODE':
+        case 'DARK_MODE':
+          if(state.darkMode){
+            state.darkMode=false
+            return {...state, ...list, mode}
+          }
+            state.darkMode=true
+            return {...state, ...list, mode}
 
-        if(state.darkMode){
-          state.darkMode=false
-          return {...state, ...list, mode}
-        }
-          state.darkMode=true
-          return {...state, ...list, mode}
-    default:
-      return state
+      default:
+        return state
   }
 }

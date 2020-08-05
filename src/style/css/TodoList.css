@@ -17,7 +17,7 @@
 .TodoListItem p{
   font-size: 21px;
 }
-.TodoItems::first-letter{
+.TodoItems input::first-letter{
   text-transform: capitalize;
 }
 .DeleteButton{
@@ -122,4 +122,9 @@ button:focus{
 .lightLight{
   font-size: 25px;
   color: #101935 ;
+}
+#itemTodoMessage{
+  font-size: 11px;
+  color:rgb(199, 41, 6);
+float: left;
 }

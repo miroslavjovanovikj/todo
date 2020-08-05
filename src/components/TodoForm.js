@@ -36,12 +36,14 @@ class TodoForm extends Component{
         <div className="TodoForm">
           <form  className='TodoFormInput'  onSubmit={this.handleSubmit}>
           <input type="text" name="todoItem" placeholder='Enter Text' value={this.state.todoItem} onChange={this.handleInputChange} />
-          <button className='TodoFormButton'type="submit" disabled={this.state.todoItem===''}>
-            <i className={this.state.todoItem==='' ?
+
+          <button className='TodoFormButton'type="submit" disabled={this.state.todoItem==='' || this.state.todoItem.length>23}>
+            <i className={this.state.todoItem==='' || this.state.todoItem.length>23 ?
               'iconEmpty far fa-plus-square' :
               'plusIcon far fa-plus-square'}>
             </i>
           </button>
+            {this.state.todoItem.length>23 ?<p className="MessageForm">Your todo is to long</p> : ''}
         </form>
         </div>
         </div>

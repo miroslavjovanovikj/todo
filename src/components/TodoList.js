@@ -20,12 +20,19 @@ class TodoList extends Component{
     handleMode(data){
       this.props.darkMode(data)
     }
+
   render(){
-    {this.props.newMode ?  document.body.style.backgroundColor='#101935' : document.body.style.backgroundColor='#ffff'}
+    {
+      this.props.newMode ?
+      document.body.style.backgroundColor='#101935' :
+      document.body.style.backgroundColor='#ffff'
+     }
+
     return(
       <div className='container'>
         <div className='row'>
           <div className="col-md-4"></div>
+
           <div className="Todo col-md-4 ">
             <i className={ this.props.newMode ?
                 'fas fa-moon ligthDark' :
@@ -37,38 +44,36 @@ class TodoList extends Component{
                   'ChangeMode'}>
                   {this.props.newMode ? 'DARK' : 'LIGHT'} MODE
               </p>
+
             <TodoForm />
+
              <div className='TodoList '>
+
                {this.props.list.map((todo)=>(
                  <div className="TodoListItem"  key={todo.currId}>
                      <form onSubmit={this.handleEdit}>
-                     <p className='TodoItems col-md-10 col-xs-10'>
-                        <input className="editTodo" type="text" value={todo.todoItem } name="todoItem"
-                          onChange={(e)=>this.handleEdit(e.target.value, todo.currId)}
-                        />
-                      </p>
-                      <div>
-                          <i onClick={()=>this.handleDone(todo.currId)}
-                              className={!todo.complited ?
-                                'TodoToggleButton  col-md-1 col-xs-1 fas fa-check-circle':
-                                'TodoToggleButton1 col-md-1 col-xs-1 fas fa-check-circle'}>
+                         <p className='TodoItems col-md-10 col-xs-10' >
+                            <input className="editTodo"type="text" value={todo.todoItem} maxLength="24" name="todoItem"
+                              onChange={(e)=>this.handleEdit(e.target.value, todo.currId)}
+                            />
+                          </p>
+                            <i onClick={()=>this.handleDone(todo.currId)}
+                                  className={!todo.complited ?
+                                  'TodoToggleButton  col-md-1 col-xs-1 fas fa-check-circle':
+                                  'TodoToggleButton1 col-md-1 col-xs-1 fas fa-check-circle'}>
                             </i>
-                      </div>
-                       <div className='TodoButtons col-md-1 col-xs-1'>
-                          <button className='DeleteButton' onClick={()=>this.handleDelete(todo.currId)}><i className=" fas fa-trash"></i></button>
-                       </div>
+                         <div className='TodoButtons col-md-1 col-xs-1'>
+                            <button className='DeleteButton' onClick={()=>this.handleDelete(todo.currId)}><i className=" fas fa-trash"></i></button>
+                         </div>
+                      {todo.todoItem.length>23 ? <p id="itemTodoMessage">Your todo is to long</p> : ''}
                      </form>
                  </div>
                ))}
-
              </div>
             </div>
               <div className="col-md-4"></div>
           </div>
-
-
         </div>
-
     )
   }
 }
@@ -88,6 +93,3 @@ const mapDispatchToProps = (dispatch)=>{
   }
 }
 export default connect(mapStateToProps,mapDispatchToProps)(TodoList);
-              // <FlipMove duration={300} easing='ease-in-out'>
-                        // </FlipMove>
-// <input type="text" name="myname" value={this.state.myname} onChange={this.handleInput} />
